@@ -9,15 +9,15 @@ svg {
 #background {
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  fill: white;
-  stroke: rgb(225, 228, 232);
+  fill: none;
+  stroke: none;
   stroke-width: 1px;
   rx: 6px;
   ry: 6px;
 }
 
 #gh-dark-mode-only:target #background {
-  fill: #0d1117;
+  fill: none;
   stroke-width: 0.5px;
 }
 
@@ -32,13 +32,13 @@ h2 {
   line-height: 24px;
   font-size: 16px;
   font-weight: 600;
-  color: rgb(36, 41, 46);
-  fill: rgb(36, 41, 46);
+  color: #c85a80;
+  fill: #c85a80;
 }
 
 #gh-dark-mode-only:target h2 {
-  color: #c9d1d9;
-  fill: #c9d1d9;
+  color: #ffc8e0;
+  fill: #ffc8e0;
 }
 
 ul {
@@ -71,14 +71,14 @@ div.ellipsis {
 }
 
 .octicon {
-  fill: rgb(88, 96, 105);
+  fill: #e890b0;
   margin-right: 0.5ch;
   vertical-align: top;
 }
 
 #gh-dark-mode-only:target .octicon {
-  color: #8b949e;
-  fill: #8b949e;
+  color: #ffb8d4;
+  fill: #ffb8d4;
 }
 
 .progress {
@@ -107,19 +107,19 @@ div.ellipsis {
 .lang {
   font-weight: 600;
   margin-right: 4px;
-  color: rgb(36, 41, 46);
+  color: #8b3a5e;
 }
 
 #gh-dark-mode-only:target .lang {
-  color: #c9d1d9;
+  color: #f0d0e0;
 }
 
 .percent {
-  color: rgb(88, 96, 105)
+  color: #8b3a5e
 }
 
 #gh-dark-mode-only:target .percent {
-  color: #8b949e;
+  color: #f0d0e0;
 }
 </style>
 <g>
