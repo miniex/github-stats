@@ -59,8 +59,6 @@ td {
 }
 
 tr {
-  transform: translateX(-200%);
-  animation: slideIn 2s ease-in-out forwards;
 }
 
 .octicon {
