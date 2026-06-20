@@ -264,6 +264,7 @@ fn getReposByYear(
         \\          stargazerCount
         \\          forkCount
         \\          isPrivate
+        \\          viewerPermission
         \\          languages(
         \\              first: 100,
         \\              orderBy: { direction: DESC, field: SIZE }
@@ -320,6 +321,7 @@ fn getReposByYear(
                         stargazerCount: u32,
                         forkCount: u32,
                         isPrivate: bool,
+                        viewerPermission: ?[]const u8,
                         languages: ?struct {
                             edges: ?[]struct {
                                 size: u32,
@@ -379,6 +381,19 @@ fn getReposByYear(
 
     for (stats.commitContributionsByRepository) |x| {
         const raw_repo = x.repository;
+        // ponytail: count only repos you can push to (yours + your orgs');
+        // skip repos you merely contributed to (viewerPermission READ/TRIAGE/null).
+        const perm = raw_repo.viewerPermission orelse "";
+        if (!std.mem.eql(u8, perm, "ADMIN") and
+            !std.mem.eql(u8, perm, "MAINTAIN") and
+            !std.mem.eql(u8, perm, "WRITE"))
+        {
+            std.log.debug(
+                "Skipping {s} (permission: {s})",
+                .{ raw_repo.nameWithOwner, perm },
+            );
+            continue;
+        }
         if (context.seen.get(raw_repo.nameWithOwner) orelse false) {
             std.log.debug(
                 "Skipping {s} (seen)",
