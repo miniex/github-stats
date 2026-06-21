@@ -7,10 +7,10 @@ svg {
 }
 
 #background {
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
   fill: none;
-  stroke: rgba(200, 90, 128, 0.25);
+  stroke: #e890b0;
   stroke-width: 1px;
   rx: 6px;
   ry: 6px;
@@ -18,7 +18,8 @@ svg {
 
 #gh-dark-mode-only:target #background {
   fill: none;
-  stroke-width: 0.5px;
+  stroke: #ffb8d4;
+  stroke-width: 1px;
 }
 
 foreignObject {
@@ -78,7 +79,7 @@ tr {
 }
 </style>
 <g>
-<rect x="5" y="5" id="background" />
+<rect x="0.5" y="0.5" id="background" />
 <g>
 <foreignObject x="8" y="21" width="344" height="168">
 <div xmlns="http://www.w3.org/1999/xhtml">
